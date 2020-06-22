@@ -6,35 +6,41 @@ namespace SelectionStatementsConsole
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the number guessing game!!!");
-            Console.WriteLine("See if you can guess the correct number.");
-            Console.WriteLine("What is the upper limit for the range of the number?");
+            Console.WriteLine("What is your favorite school subject?");
 
+            var subject = Console.ReadLine();
 
-            var userResponse = Console.ReadLine();
-
-            var upperLimit = int.Parse(userResponse);
-
-
-            var random = new Random();
-            var favNumber = random.Next(1, upperLimit);
-
-            Console.WriteLine("Input your guess:");
-
-            var guess = int.Parse(Console.ReadLine());
-
-            if (guess > favNumber)
+            switch (subject.ToLower())
             {
-                Console.WriteLine("Your guess is too high! Sorry, try again.");
+                case "math":
+                    Console.WriteLine("Math is a tough subject!");
+                    break;
+
+                case "science":
+                    Console.WriteLine("Science is a tougher subject!");
+                    break;
+
+                case "pe":
+                    Console.WriteLine("PE is a rough!");
+                    break;
+
+                case "history":
+                    Console.WriteLine("History can get interesting");
+                    break;
+
+                case "english":
+                    Console.WriteLine("Not my favorite subject");
+                    break;
+
+                default:
+                    Console.WriteLine($"I haven't taken that subject before, {subject} sounds interesting");
+                    break;
             }
-            else if (guess < favNumber)
-            {
-                Console.WriteLine("Your guess is too low! Sorry, try again.");
-            }
-            else
-            {
-                Console.WriteLine("Correct!!!");
-            }
+
+       
+
+
+
 
 
 
